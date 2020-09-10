@@ -1,0 +1,12 @@
+# npm debug & logs
+*.log
+
+# dependencies
+node_modules/
+
+# temporary files
+*.tmp
+*~
+
+# distribution files
+dist/

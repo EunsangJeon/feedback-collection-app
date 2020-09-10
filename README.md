@@ -1,10 +1,10 @@
 # feedback-collection-app
 
-## tech stacks
+### tech stacks
 
 - typescript & html & css
 - node & express
 - react & redux
 - babel & webpack
-- tslint & prettier
+- eslint & prettier
 - jest & enzyme
