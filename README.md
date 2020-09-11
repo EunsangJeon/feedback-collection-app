@@ -2,9 +2,12 @@
 
 ### tech stacks
 
-- typescript & html & css
+- typescript
+- html & css & bootstrap
 - node & express
 - react & redux
 - babel & webpack
 - eslint & prettier
 - jest & enzyme
+- passportjs
+- mongodb

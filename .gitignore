@@ -10,3 +10,9 @@ node_modules/
 
 # distribution files
 dist/
+
+# sourcemap files
+*.map
+
+# vscode settings
+.vscode
