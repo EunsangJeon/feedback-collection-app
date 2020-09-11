@@ -6,8 +6,8 @@
 - html & css & bootstrap
 - node & express
 - react & redux
-- babel & webpack
+- babel & webpack & nodemon
 - eslint & prettier
-- jest & enzyme
+- jest & enzyme & supertest
 - passportjs
 - mongodb
