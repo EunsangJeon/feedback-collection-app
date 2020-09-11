@@ -13,3 +13,6 @@ dist/
 
 # sourcemap files
 *.map
+
+# vscode settings
+.vscode/
