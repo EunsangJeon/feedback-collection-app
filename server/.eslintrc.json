@@ -55,6 +55,11 @@
         "ts": "never",
         "tsx": "never"
       }
+    ],
+    // to allow dev dependencies for test files
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["**/*.test.ts", "**/*.test.tsx"] }
     ]
   }
 }
