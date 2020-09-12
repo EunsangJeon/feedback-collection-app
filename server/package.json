@@ -10,7 +10,8 @@
   "scripts": {
     "start": "nodemon",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rm -rf coverage dist",
+    "test": "jest --coverage"
   },
   "author": "Eunsang Jeon",
   "license": "ISC",
@@ -19,15 +20,20 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.8",
+    "@types/jest": "^26.0.13",
     "@typescript-eslint/eslint-plugin": "^4.1.0",
     "@typescript-eslint/parser": "^4.1.0",
     "eslint": "^7.8.1",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.11.0",
+    "eslint-import-resolver-typescript": "^2.3.0",
     "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^24.0.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.4.2",
     "nodemon": "^2.0.4",
     "prettier": "2.1.1",
+    "ts-jest": "^26.3.0",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.2"
   }

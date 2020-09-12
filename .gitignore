@@ -16,3 +16,6 @@ dist/
 
 # vscode settings
 .vscode/
+
+# test coverages
+coverage/
