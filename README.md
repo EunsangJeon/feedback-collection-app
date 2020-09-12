@@ -13,7 +13,7 @@
 - passportjs
 - mongodb
 
-### when you use this project as a boilerplage
+### if you use server components as a boilerplate(npm)
 
 - --save: express
 - --save-dev --save-exact: prettier
