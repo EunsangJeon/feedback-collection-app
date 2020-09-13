@@ -2,19 +2,24 @@
   "name": "feedback-collection-app-server",
   "version": "1.0.0",
   "description": "feedback-collection-app-server",
-  "main": "src/index.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/EunsangJeon/feedback-collection-app.git"
   },
-  "scripts": {
-    "start": "nodemon",
-    "build": "tsc -p tsconfig-build.json",
-    "clean": "rm -rf coverage dist",
-    "test": "jest --coverage"
-  },
   "author": "Eunsang Jeon",
   "license": "ISC",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "nodemon",
+    "test": "jest --coverage",
+    "build": "tsc -p tsconfig-build.json",
+    "start": "node dist/index.js",
+    "clean": "rm -rf coverage dist"
+  },
+  "engines": {
+    "node": "14.10.0",
+    "npm": "6.14.8"
+  },
   "dependencies": {
     "express": "^4.17.1"
   },
@@ -24,6 +29,7 @@
     "@types/supertest": "^2.0.10",
     "@typescript-eslint/eslint-plugin": "^4.1.0",
     "@typescript-eslint/parser": "^4.1.0",
+    "dotenv": "^8.2.0",
     "eslint": "^7.8.1",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.11.0",
