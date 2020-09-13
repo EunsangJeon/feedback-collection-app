@@ -1,4 +1,4 @@
-import isNumber from './isNumber';
+import isNumber from '../../src/utils/isNumber';
 
 describe('isNumber Utils', () => {
   it('Its a number', () => {

@@ -1,5 +1,5 @@
 import request from 'supertest';
-import app from './index';
+import app from '../src/index';
 
 describe('Test index.ts', () => {
   it('get / should return {hi: there}', async () => {

@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "nodemon",
-    "build": "tsc",
+    "build": "tsc -p tsconfig-build.json",
     "clean": "rm -rf coverage dist",
     "test": "jest --coverage"
   },
