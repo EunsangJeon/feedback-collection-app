@@ -3,8 +3,6 @@
     /* Reference: https://aka.ms/tsconfig.json */
     "target": "es5",
     "module": "commonjs",
-    "sourceMap": true,
-    "outDir": "./dist",
     "rootDir": ".",
 
     /* Strict Type-Checking Options */
@@ -22,5 +20,5 @@
   },
   "lib": ["es2015"],
   "include": ["src", "test"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist", "coverage"]
 }
