@@ -2,9 +2,10 @@ import passport from 'passport';
 import {
   Profile,
   Strategy as GoogleStrategy,
-  // VerifyCallback,
+  VerifyCallback,
 } from 'passport-google-oauth20';
-import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from '../config/keys';
+import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from './keys';
+import addUser from '../services/addUser';
 
 passport.use(
   new GoogleStrategy(
@@ -16,10 +17,10 @@ passport.use(
     (
       accessToken: string,
       refreshToken: string,
-      profile: Profile
-      // done: VerifyCallback
+      profile: Profile,
+      done: VerifyCallback
     ) => {
-      console.log(`accessToken: ${accessToken}`);
+      addUser(profile.id);
     }
   )
 );
