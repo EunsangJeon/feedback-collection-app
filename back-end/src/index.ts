@@ -1,17 +1,7 @@
-import express, { Application } from 'express';
-import { PORT, NODE_ENV } from './config/variables';
-import rootRoutes from './routes/rootRoutes';
+import http from 'http';
+import app from './app';
+import { PORT } from './config/variables';
 
-const app: Application = express();
-
-require('./services/passport');
-
-app.use('/', rootRoutes);
-
-if (NODE_ENV !== 'test') {
-  app.listen(PORT, () => {
-    console.log(`Server is listening on port ${PORT}.`);
-  });
-}
-
-export default app;
+http.createServer(app).listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}.`);
+});
