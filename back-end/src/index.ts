@@ -1,6 +1,6 @@
 import http from 'http';
-import app from './app';
 import mongoose from 'mongoose';
+import app from './app';
 import { PORT } from './config/variables';
 import { MONGODB_URL } from './config/keys';
 

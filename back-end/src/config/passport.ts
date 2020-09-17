@@ -20,7 +20,7 @@ passport.use(
       profile: Profile,
       done: VerifyCallback
     ) => {
-      addUser(profile.id);
+      addUser(profile.id, done);
     }
   )
 );
