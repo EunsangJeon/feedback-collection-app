@@ -5,7 +5,7 @@ import {
   VerifyCallback,
 } from 'passport-google-oauth20';
 import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from './keys';
-import addUser from '../services/addUser';
+import googleAuthAddUser from '../index';
 
 passport.use(
   new GoogleStrategy(
@@ -20,7 +20,7 @@ passport.use(
       profile: Profile,
       done: VerifyCallback
     ) => {
-      addUser(profile.id, done);
+      googleAuthAddUser(profile.id, done);
     }
   )
 );

@@ -1,10 +1,6 @@
-import http from 'http';
-import mongoose from 'mongoose';
-import app from './app';
-import { PORT } from './config/variables';
-import { MONGODB_URL } from './config/keys';
+import User from './models/userModel';
+import userService from './services/userService';
 
-mongoose.connect(MONGODB_URL);
-http.createServer(app).listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}.`);
-});
+const UserService = userService(User);
+
+export default UserService.googleAuthAddUser;
