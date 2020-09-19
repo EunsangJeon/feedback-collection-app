@@ -6,23 +6,13 @@ const googleAuthAddUser = (User: typeof userModel) => async (
   googleId: string,
   done: VerifyCallback
 ) => {
-  let user;
-
-  try {
-    user = await User.findOne({ googleId });
-  } catch (err) {
-    console.error(err);
-  }
+  const user = await User.findOne({ googleId });
 
   if (user) {
     done(undefined, user, 'existing');
   } else {
-    try {
-      user = await new User({ googleId }).save();
-      done(undefined, user, 'new');
-    } catch (err) {
-      console.error(err);
-    }
+    await new User({ googleId }).save();
+    done(undefined, user, 'new');
   }
 };
 

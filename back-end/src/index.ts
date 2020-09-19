@@ -1,5 +1,5 @@
-import GoogleAuthAddUser from 'services/interfaces/GoogleAuthAddUser';
 import User from './models/userModel';
 import userService from './services/userService';
 
-export const { googleAuthAddUser, addUser } = userService(User);
+// eslint-disable-next-line import/prefer-default-export
+export const { googleAuthAddUser } = userService(User);
