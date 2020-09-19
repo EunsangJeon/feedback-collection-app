@@ -1,3 +1,5 @@
+process.env.PORT = 5001;
+
 module.exports = {
   // Reference: https://jestjs.io/docs/en/configuration.html
   clearMocks: true,

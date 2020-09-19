@@ -2,7 +2,7 @@
 /* eslint-disable global-require */
 import mongoose from 'mongoose';
 import { TEST_MONGODB_URL } from '../../src/config/keys';
-import googleStrategyVerify from '../../src/config/googleStrategyVerify';
+import googleStrategyVerify from '../../src/services/googleStrategyVerify';
 import User from '../../src/models/userModel';
 
 mongoose.connect(TEST_MONGODB_URL, {
