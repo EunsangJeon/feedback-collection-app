@@ -10,6 +10,11 @@ router
       scope: ['profile', 'email'],
     })
   )
-  .get('/google/callback', passport.authenticate('google'));
+  .get(
+    '/google/callback',
+    passport.authenticate('google', {
+      session: false,
+    })
+  );
 
 export default router;
