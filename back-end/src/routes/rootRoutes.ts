@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
 import authRoutes from './authRoutes';
+import apiRoutes from './apiRoutes';
 
 const router = Router();
 
@@ -10,6 +11,7 @@ router
       author: 'eunsang-jeon',
     });
   })
-  .use('/auth', authRoutes);
+  .use('/auth', authRoutes)
+  .use('/api', apiRoutes);
 
 export default router;

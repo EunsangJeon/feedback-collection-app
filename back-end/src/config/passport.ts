@@ -5,11 +5,13 @@ import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from './keys';
 
 passport.serializeUser((user, done) => {
   console.log(`passport serialized: ${user}`);
+  // TODO
   done(null, user);
 });
 
 passport.deserializeUser((obj, done) => {
   console.log(`passport deserialized: ${obj}`);
+  // TODO
   done(null, obj);
 });
 
