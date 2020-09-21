@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import passport from 'passport';
 import jwt from 'jsonwebtoken';
-import { COOKIE_SESSION_KEY } from '../config/keys';
+import { JWT_SECRET } from '../config/keys';
 
 const router = Router();
 
@@ -12,19 +12,26 @@ router
       scope: ['profile', 'email'],
     })
   )
-  .get('/google/callback', passport.authenticate('google'), (req, res) => {
-    console.log(`callback: ${req.user}`);
-    const { user } = req;
-    const token = jwt.sign(
-      {
-        data: user,
-      },
-      COOKIE_SESSION_KEY,
-      { expiresIn: '5m' }
-    ); // expiry in seconds
-    console.log(`generated token: ${token}`);
-    res.cookie('jwt', token);
-    res.redirect('/');
+  .get(
+    '/google/callback',
+    passport.authenticate('google', {
+      failureRedirect: '/auth/google/fail',
+    }),
+    (req, res) => {
+      const { user } = req;
+      const token = jwt.sign(
+        {
+          data: user,
+        },
+        JWT_SECRET,
+        { expiresIn: '1h' }
+      );
+      res.cookie('jwt', token);
+      res.redirect('/');
+    }
+  )
+  .get('/google/fail', (req, res) => {
+    res.send('cannot get google account info');
   });
 
 export default router;
