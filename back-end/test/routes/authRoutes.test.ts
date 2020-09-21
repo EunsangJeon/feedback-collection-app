@@ -10,4 +10,8 @@ describe('authRoutes.ts', () => {
     const result = await request(app).get('/auth/google/callback').send();
     expect(result.status).toBe(302);
   });
+  it('get /auth/fail should success', async () => {
+    const result = await request(app).get('/auth/google/callback').send();
+    expect(result.status).toBe(302);
+  });
 });

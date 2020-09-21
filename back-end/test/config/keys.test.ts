@@ -20,7 +20,7 @@ describe('keys should be return string value', () => {
     expect(typeof keys.GOOGLE_CLIENT_SECRET).toBe('string');
     expect(typeof keys.MONGODB_URL).toBe('string');
     expect(typeof keys.TEST_MONGODB_URL).toBe('string');
-    expect(typeof keys.COOKIE_SESSION_KEY).toBe('string');
+    expect(typeof keys.JWT_SECRET).toBe('string');
   });
 
   it('test the case of invalid process.env', () => {
@@ -28,7 +28,7 @@ describe('keys should be return string value', () => {
     process.env.GOOGLE_CLIENT_SECRET = undefined;
     process.env.MONGODB_URL = undefined;
     process.env.TEST_MONGODB_URL = undefined;
-    process.env.COOKIE_SESSION_KEY = undefined;
+    process.env.JWT_SECRET = undefined;
 
     const keys = require('../../src/config/keys');
 
@@ -36,6 +36,6 @@ describe('keys should be return string value', () => {
     expect(keys.GOOGLE_CLIENT_SECRET).toBe('');
     expect(keys.MONGODB_URL).toBe('');
     expect(keys.TEST_MONGODB_URL).toBe('');
-    expect(keys.COOKIE_SESSION_KEY).toBe('');
+    expect(keys.JWT_SECRET).toBe('');
   });
 });
