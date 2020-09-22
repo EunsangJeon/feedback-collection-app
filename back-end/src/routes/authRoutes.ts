@@ -32,6 +32,9 @@ router
   )
   .get('/google/fail', (req, res) => {
     res.send('cannot get google account info');
+  })
+  .get('/logout', (req, res) => {
+    res.clearCookie('jwt').send('logged out');
   });
 
 export default router;
