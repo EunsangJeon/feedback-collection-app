@@ -5,7 +5,7 @@
 - typescript
 - html & css & bootstrap
 - node & express
-- npm/npx & nodemon & dotenv
+- npm/npx/yarn & nodemon & dotenv
 - react & redux & react-router
 - babel & webpack
 - eslint & prettier
