@@ -4,3 +4,4 @@ export const GOOGLE_CLIENT_SECRET: string =
 export const MONGODB_URL: string = process.env.MONGODB_URL || '';
 export const TEST_MONGODB_URL: string = process.env.TEST_MONGODB_URL || '';
 export const JWT_SECRET: string = process.env.JWT_SECRET || '';
+export const FRONTEND_URL: string = process.env.FRONTEND_URL || '';

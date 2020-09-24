@@ -9,11 +9,11 @@ const googleAuthAddUser = (User: typeof userModel) => async (
   let user = await User.findOne({ googleId });
 
   if (user) {
-    done(undefined, user, 'existing');
-  } else {
-    user = await new User({ googleId }).save();
-    done(undefined, user, 'new');
+    return done(undefined, user, 'existing');
   }
+
+  user = await new User({ googleId }).save();
+  return done(undefined, user, 'new');
 };
 
 export default (User: typeof userModel): ListUserService => ({

@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import passport from 'passport';
 import jwt from 'jsonwebtoken';
-import { JWT_SECRET } from '../config/keys';
+import { JWT_SECRET, FRONTEND_URL } from '../config/keys';
 
 const router = Router();
 
@@ -27,13 +27,13 @@ router
         { expiresIn: '1h' }
       );
       res.cookie('jwt', token);
-      res.redirect('/');
+      res.redirect(FRONTEND_URL);
     }
   )
   .get('/google/fail', (req, res) => {
     res.send('cannot get google account info');
   })
-  .get('/logout', (req, res) => {
+  .get('/google/logout', (req, res) => {
     res.clearCookie('jwt').send('logged out');
   });
 

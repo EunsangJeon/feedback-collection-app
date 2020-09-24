@@ -10,12 +10,12 @@ describe('authRoutes.ts', () => {
     const result = await request(app).get('/auth/google/callback').send();
     expect(result.status).toBe(302);
   });
-  it('get /auth/fail should success', async () => {
+  it('get /auth/google/fail should success', async () => {
     const result = await request(app).get('/auth/google/fail').send();
     expect(result.status).toBe(200);
   });
-  it('get /auth/logout should success', async () => {
-    const result = await request(app).get('/auth/logout').send();
+  it('get /auth/google/logout should success', async () => {
+    const result = await request(app).get('/auth/google/logout').send();
     expect(result.status).toBe(200);
   });
 });

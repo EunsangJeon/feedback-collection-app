@@ -21,6 +21,7 @@ describe('keys should be return string value', () => {
     expect(typeof keys.MONGODB_URL).toBe('string');
     expect(typeof keys.TEST_MONGODB_URL).toBe('string');
     expect(typeof keys.JWT_SECRET).toBe('string');
+    expect(typeof keys.FRONTEND_URL).toBe('string');
   });
 
   it('test the case of invalid process.env', () => {
@@ -29,6 +30,7 @@ describe('keys should be return string value', () => {
     process.env.MONGODB_URL = undefined;
     process.env.TEST_MONGODB_URL = undefined;
     process.env.JWT_SECRET = undefined;
+    process.env.FRONTEND_URL = undefined;
 
     const keys = require('../../src/config/keys');
 
@@ -37,5 +39,6 @@ describe('keys should be return string value', () => {
     expect(keys.MONGODB_URL).toBe('');
     expect(keys.TEST_MONGODB_URL).toBe('');
     expect(keys.JWT_SECRET).toBe('');
+    expect(keys.FRONTEND_URL).toBe('');
   });
 });
