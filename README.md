@@ -3,10 +3,10 @@
 ### tech stacks
 
 - typescript
-- html & css & bootstrap
+- html & css & materialize
 - node & express
 - npm/npx/yarn & nodemon & dotenv
-- react & redux & react-router
+- react & redux & react-router & axios
 - babel & webpack
 - eslint & prettier
 - jest & enzyme & supertest

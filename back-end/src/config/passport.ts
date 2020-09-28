@@ -38,7 +38,9 @@ passport.use(
 passport.use(
   new JWTStrategy(
     {
-      jwtFromRequest: (req) => req.cookies.jwt,
+      jwtFromRequest: (req) => {
+        return req.cookies.jwt;
+      },
       secretOrKey: JWT_SECRET,
     },
     (payload, done) => {

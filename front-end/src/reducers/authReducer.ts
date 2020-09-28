@@ -1,10 +1,11 @@
 import { Action } from 'redux';
 
-interface State {
+interface IState {
   value?: string;
 }
 
-export default (state: State = {}, action: Action): State => {
+export default (state: IState = {}, action: Action): IState => {
+  console.log(action);
   switch (action.type) {
     default:
       return state;
