@@ -1,14 +1,16 @@
-/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Cookies from 'js-cookie';
+
 import * as actions from '../actions';
-
 import Header from './Header';
+import Landing from './Landing';
+import Dashboard from './Dashboard';
+import NoAuth from './NoAuth';
+import PrivateRoute from './PrivateRoute';
 
-const Dashboard = () => <h2>Dashboard</h2>;
 const SurveyNew = () => <h2>SurveyNew</h2>;
-const Landing = () => <h2>Landing</h2>;
 
 interface IAppProps {
   fetchUser: CallableFunction;
@@ -16,7 +18,9 @@ interface IAppProps {
 
 class App extends Component<IAppProps> {
   componentDidMount() {
-    this.props.fetchUser();
+    if (Cookies.get('jwt')) {
+      this.props.fetchUser();
+    }
   }
 
   render(): JSX.Element {
@@ -26,12 +30,17 @@ class App extends Component<IAppProps> {
           <div>
             <Header />
             <Route exact path="/" component={Landing} />
-            <Route exact path="/surveys" component={Dashboard} />
+            <Route exact path="/no-auth" component={NoAuth} />
+            <PrivateRoute exact path="/surveys" component={Dashboard} isAuthenticated={this.authenticated()} />
             <Route path="/surveys/new" component={SurveyNew} />
           </div>
         </BrowserRouter>
       </div>
     );
+  }
+
+  authenticated(): boolean {
+    return Cookies.get('jwt') ? true : false;
   }
 }
 

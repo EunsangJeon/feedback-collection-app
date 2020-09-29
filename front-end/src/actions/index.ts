@@ -4,8 +4,7 @@ import { BACKEND_URL } from '../config/keys';
 import { Dispatch } from 'react';
 import { AnyAction } from 'redux';
 
-export const fetchUser = () => (dispatch: Dispatch<AnyAction>): void => {
-  axios.get(`${BACKEND_URL}/api/current-user`, { withCredentials: true }).then((res) => {
-    dispatch({ type: FETCH_USER, payload: res });
-  });
+export const fetchUser = () => async (dispatch: Dispatch<AnyAction>): Promise<void> => {
+  const res = await axios.get(`${BACKEND_URL}/api/current-user`, { withCredentials: true });
+  dispatch({ type: FETCH_USER, payload: res.data });
 };

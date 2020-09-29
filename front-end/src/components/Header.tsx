@@ -1,21 +1,48 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { BACKEND_URL } from '../config/keys';
+import { Link } from 'react-router-dom';
 
-class Header extends Component {
+interface IHeaderProps {
+  auth: unknown;
+}
+
+class Header extends Component<IHeaderProps> {
+  renderContent() {
+    switch (this.props.auth) {
+      case null:
+        return (
+          <li>
+            <a href={`${BACKEND_URL}/auth/google`}>Login With Google</a>
+          </li>
+        );
+      default:
+        return (
+          <li>
+            <a href={`${BACKEND_URL}/auth/logout`}>Logout</a>
+          </li>
+        );
+    }
+  }
+
   render(): JSX.Element {
     return (
       <nav>
         <div className="nav-wrapper blue lighten-1">
-          <a className="left brand-logo">feedback collection</a>
-          <ul className="right">
-            <li>
-              <a href={`${BACKEND_URL}/auth/google`}>Login With Google</a>
-            </li>
-          </ul>
+          <Link to={this.props.auth ? '/surveys' : '/'} className="left brand-logo">
+            feedback collection
+          </Link>
+          <ul className="right">{this.renderContent()}</ul>
         </div>
       </nav>
     );
   }
 }
 
-export default Header;
+function mapStateToProps(state: IHeaderProps): IHeaderProps {
+  return {
+    auth: state.auth,
+  };
+}
+
+export default connect(mapStateToProps)(Header);

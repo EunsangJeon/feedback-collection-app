@@ -27,14 +27,14 @@ router
         { expiresIn: '1h' }
       );
       res.cookie('jwt', token);
-      res.redirect(FRONTEND_URL);
+      res.redirect(`${FRONTEND_URL}/surveys`);
     }
   )
   .get('/google/fail', (req, res) => {
     res.send('cannot get google account info');
   })
-  .get('/google/logout', (req, res) => {
-    res.clearCookie('jwt').send('logged out');
+  .get('/logout', (req, res) => {
+    res.clearCookie('jwt').redirect(FRONTEND_URL);
   });
 
 export default router;
