@@ -18,7 +18,7 @@ interface IAppProps {
 
 class App extends Component<IAppProps> {
   componentDidMount() {
-    if (Cookies.get('jwt')) {
+    if (this.authenticated()) {
       this.props.fetchUser();
     }
   }

@@ -13,7 +13,11 @@
 - passportjs & jwt & google-oauth20
 - mongodb
 
-### if you use server components as a boilerplate but want to use the newest version of packages
+### billing part
+
+- react-stripe-checkout
+
+### if you use this project as a boilerplate with the newest version of packages, keep in mind:
 
 - --save & --save-dev: please refer to package.json
 - --save-dev --save-exact: prettier
