@@ -34,7 +34,10 @@ class Header extends Component<IHeaderProps> {
     return (
       <nav>
         <div className="nav-wrapper blue lighten-1">
-          <Link to={this.props.auth ? '/surveys' : '/'} className="left brand-logo">
+          <Link
+            to={this.props.auth ? '/surveys' : '/'}
+            className="left brand-logo"
+          >
             feedback collection
           </Link>
           <ul className="right">{this.renderContent()}</ul>
