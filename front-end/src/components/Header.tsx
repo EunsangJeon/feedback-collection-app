@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { BACKEND_URL } from '../config/keys';
 import { Link } from 'react-router-dom';
+
+import { BACKEND_URL } from '../config/keys';
+import Payments from './Payments';
 
 interface IHeaderProps {
   auth: unknown;
@@ -17,11 +19,14 @@ class Header extends Component<IHeaderProps> {
           </li>
         );
       default:
-        return (
-          <li>
+        return [
+          <li key="payments">
+            <Payments />
+          </li>,
+          <li key="logout">
             <a href={`${BACKEND_URL}/auth/logout`}>Logout</a>
-          </li>
-        );
+          </li>,
+        ];
     }
   }
 

@@ -31,7 +31,12 @@ class App extends Component<IAppProps> {
             <Header />
             <Route exact path="/" component={Landing} />
             <Route exact path="/no-auth" component={NoAuth} />
-            <PrivateRoute exact path="/surveys" component={Dashboard} isAuthenticated={this.authenticated()} />
+            <PrivateRoute
+              exact
+              path="/surveys"
+              component={Dashboard}
+              isAuthenticated={this.authenticated()}
+            />
             <Route path="/surveys/new" component={SurveyNew} />
           </div>
         </BrowserRouter>

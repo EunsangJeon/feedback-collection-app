@@ -6,7 +6,10 @@ interface IState {
   value?: unknown;
 }
 
-export default (state: IState | null = null, action: AnyAction): IState | null => {
+export default (
+  state: IState | null = null,
+  action: AnyAction,
+): IState | null => {
   switch (action.type) {
     case FETCH_USER:
       return action.payload;
