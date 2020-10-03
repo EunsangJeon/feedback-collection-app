@@ -12,6 +12,7 @@ require('./config/passport');
 const app: Application = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(passport.initialize());
 app.use((req, res, next) => {

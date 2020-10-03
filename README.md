@@ -15,7 +15,7 @@
 
 ### billing part
 
-- react-stripe-checkout
+- stripe & react-stripe-checkout
 
 ### if you use this project as a boilerplate with the newest version of packages, keep in mind:
 
