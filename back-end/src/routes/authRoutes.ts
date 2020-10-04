@@ -34,7 +34,8 @@ router
     res.send('cannot get google account info');
   })
   .get('/logout', (req, res) => {
-    res.clearCookie('jwt').redirect(FRONTEND_URL);
+    res.clearCookie('jwt');
+    res.redirect(`${FRONTEND_URL}`);
   });
 
 export default router;
