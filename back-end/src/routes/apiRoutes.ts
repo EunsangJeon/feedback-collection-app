@@ -29,8 +29,6 @@ router
         description: '$5 for 5 credits',
         source: req.body.id,
       });
-
-      console.log(charge);
     }
   );
 
