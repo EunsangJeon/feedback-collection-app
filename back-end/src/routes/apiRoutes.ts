@@ -4,7 +4,8 @@
 
 import { Request, Response, Router } from 'express';
 import passport from 'passport';
-import { STRIPE_SECRET_KEY } from '../config/keys';
+import jwt from 'jsonwebtoken';
+import { STRIPE_SECRET_KEY, JWT_SECRET } from '../config/keys';
 import User from '../models/userModel';
 
 const stripe = require('stripe')(STRIPE_SECRET_KEY);
@@ -49,7 +50,15 @@ router
         { new: true }
       );
 
-      res.send(updatedUser);
+      const token = jwt.sign(
+        {
+          data: updatedUser,
+        },
+        JWT_SECRET,
+        { expiresIn: '1h' }
+      );
+
+      res.cookie('jwt', token).send(updatedUser);
     }
   );
 
