@@ -11,6 +11,8 @@ mongoose
   .then(() => console.log('Server is connected to MongoDB'))
   .catch((err) => console.error(err));
 
+mongoose.set('useFindAndModify', false);
+
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}.`);
 });
