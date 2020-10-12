@@ -1,27 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import passport from 'passport';
 import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 import { Strategy as JWTStrategy } from 'passport-jwt';
-import { Document } from 'mongoose';
 import googleStrategyVerify from '../services/googleStrategyVerify';
 import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, JWT_SECRET } from './keys';
-import User from '../models/userModel';
 
-passport.serializeUser<Document, string>((user, done) => {
+passport.serializeUser((user: any, done) => {
   done(null, user.id);
-});
-
-passport.deserializeUser<Document, string>((id, done) => {
-  User.findById(id)
-    .then((user) => {
-      if (user) {
-        done(null, user);
-      } else {
-        done(new Error('passport deserializeUser could not get user'));
-      }
-    })
-    .catch((err) => {
-      done(err);
-    });
 });
 
 passport.use(
