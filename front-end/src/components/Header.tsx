@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -6,7 +7,7 @@ import { BACKEND_URL } from '../config/keys';
 import Payments from './Payments';
 
 interface IHeaderProps {
-  auth: unknown;
+  auth: any;
 }
 
 class Header extends Component<IHeaderProps> {
@@ -20,9 +21,10 @@ class Header extends Component<IHeaderProps> {
         );
       default:
         return [
-          <li key="payments">
+          <li key="payments" style={{ margin: '0 10px' }}>
             <Payments />
           </li>,
+          <li key="credit">credits: {this.props.auth.credits}</li>,
           <li key="logout">
             <a href={`${BACKEND_URL}/auth/logout`}>Logout</a>
           </li>,

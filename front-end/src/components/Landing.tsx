@@ -1,6 +1,22 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-class Landing extends Component {
+import * as actions from '../actions';
+
+interface IStore {
+  auth: unknown;
+}
+
+interface IPropsDashboard {
+  auth: unknown;
+  fetchUser: () => Promise<unknown>;
+}
+
+class Landing extends Component<IPropsDashboard> {
+  componentDidMount() {
+    this.props.fetchUser();
+  }
+
   render(): JSX.Element {
     return (
       <div style={{ textAlign: 'center' }}>
@@ -11,4 +27,10 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+function mapStatesToProps(state: IStore): IStore {
+  return {
+    auth: state.auth,
+  };
+}
+
+export default connect(mapStatesToProps, actions)(Landing);
