@@ -1,6 +1,13 @@
 # feedback-collection-app
 
-### tech stacks
+### about this app
+
+- a user can login with google
+- a user can pay $5 for 5 credits
+- a user can send a survey to multiple email recepients which consumes a credit
+- a user can see statistics for surveys in the dashboard
+
+### application tech stacks, modules and frameworks
 
 - typescript
 - html & css & materialize
@@ -13,7 +20,7 @@
 - passportjs & jwt & google-oauth20
 - mongodb
 
-### billing part
+### payment modules
 
 - stripe & react-stripe-checkout
 
@@ -21,3 +28,7 @@
 
 - --save & --save-dev: please refer to package.json
 - --save-dev --save-exact: prettier
+
+### credit card for payment test
+
+- 4242 4242 4242 4242, visa card
