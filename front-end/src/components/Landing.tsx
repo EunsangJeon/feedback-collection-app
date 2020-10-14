@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Cookies from 'js-cookie';
 
 import * as actions from '../actions';
 
@@ -14,7 +15,9 @@ interface IPropsDashboard {
 
 class Landing extends Component<IPropsDashboard> {
   componentDidMount() {
-    this.props.fetchUser();
+    if (Cookies.get('jwt')) {
+      this.props.fetchUser();
+    }
   }
 
   render(): JSX.Element {
