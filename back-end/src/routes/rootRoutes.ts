@@ -1,7 +1,6 @@
 import { Router, Request, Response } from 'express';
 import authRoutes from './authRoutes';
 import apiRoutes from './apiRoutes';
-import surveyRoutes from './surveyRoutes';
 
 const router = Router();
 
@@ -13,7 +12,6 @@ router
     });
   })
   .use('/auth', authRoutes)
-  .use('/api', apiRoutes)
-  .use('/survey', surveyRoutes);
+  .use('/api', apiRoutes);
 
 export default router;

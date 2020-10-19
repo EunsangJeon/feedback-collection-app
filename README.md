@@ -1,11 +1,9 @@
-# feedback-collection-app
+# basic app with payment
 
 ### about this app
 
 - a user can login with google
 - a user can pay $5 for 5 credits
-- a user can send a survey to multiple email recepients which consumes a credit
-- a user can see statistics for surveys in the dashboard
 
 ### application tech stacks, modules and frameworks
 
