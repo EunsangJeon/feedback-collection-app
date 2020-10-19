@@ -24,7 +24,9 @@ router.post(
       title,
       subject,
       body,
-      recipients: recipients.split(',').map((email: string) => ({ email })),
+      recipients: recipients
+        .split(',')
+        .map((email: string) => ({ email: email.trim() })),
       _user: req.user._id,
       dateSent: Date.now(),
     });
