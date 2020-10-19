@@ -14,7 +14,7 @@
 - react & redux & react-router & axios
 - babel & webpack
 - eslint & prettier
-- jest & enzyme & supertest
+- jest & supertest
 - passportjs & jwt & google-oauth20
 - mongodb
 
